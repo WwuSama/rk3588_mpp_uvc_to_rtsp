@@ -1,0 +1,18 @@
+# 在板卡上运行独立的 RTSP 服务，ipc_camera 向 camera 路径发布 H.264。
+rtsp: yes
+rtspAddress: :8554
+rtspTransports: [tcp]
+
+# FFmpeg 4.4 的 RTSP/TCP 使用最大 1472 字节 RTP 包。
+# 当前仅启用 TCP，将服务分包上限与发送端对齐，避免重新打包。
+udpMaxPayloadSize: 1472
+
+rtmp: no
+hls: no
+webrtc: no
+srt: no
+moq: no
+
+paths:
+  camera:
+    source: publisher

@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "configurePresets": [
+    {
+      "name": "orangepi5pro",
+      "displayName": "Orange Pi 5 Pro / RK3588",
+      "generator": "Unix Makefiles",
+      "binaryDir": "${sourceDir}/build/orangepi5pro",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/cmake/orangepi5pro-toolchain.cmake",
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "orangepi5pro",
+      "configurePreset": "orangepi5pro"
+    }
+  ]
+}
